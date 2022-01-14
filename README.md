@@ -193,32 +193,25 @@ Recomendo sempre vocês darem uma olhada na [documentação do Git](https://git-
 ## Chaves SSH e Tokens
 
 Devido a alterações de segurança do GitHub, em 12/08/2021 o github anunciou que a autenticação via usuário/senha seria desligado, ou seja, quando for 'empurrar' seu codigo para o github, você não vai mais conseguir fazer usando somente a autenticação com seu usuário e senha. Será necessário executar alguns procedimentos de autenticação, que veremos aqui.
+
 comandos a serem executados no bash:
-ssh-keygen -t ed25519 -C email@dominio.com <enter>
-Ele vai pedir uma senha. Apos a criação da chave, voce deve navegar ate a pasta (Exemplo)
-ahkranz@krz:~/GitTutorial$ cd ~/.ssh
-ahkranz@krz:~/.ssh$ pwd
-/home/ahkranz/.ssh
-ahkranz@krz:~/.ssh$ ls
-id_ed25519  id_ed25519.pub  known_hosts
-ahkranz@krz:~/.ssh$ cat id_ed25519.pub
-ssh-ed25519 AAAAC3NzaCrw9WUAhh5huEAINubhlTQpPxsrI827rkJtb0Cene5Epzi0jop0Eos+x6F email@dominio.com
+
+`ssh-keygen -t ed25519 -C email@dominio.com` <enter>
+
+Ele vai pedir uma senha. Apos a criação da chave, voce deve navegar ate a pasta (Cfe exemplo abaixo):
+
+<img src="image/image.png">
 
 Proximo passo é ir para o github, em settings -> SSH Keys -> New ssh key:
 No campo Title, informar que maquina voce esta add (descrição livre)
 e no campo Key, colar a chave ssh obtida com o comando cat. Entao ele vai solicitar a senha para autenticação e logo em seguida vai gerar a chave publica (Conforme abaixo):
 
-Minha Maquina Linux
-SHA256:sIDrw9WUAhh5huEpzi0jop0Eos+x6FaZeOTTt0w5cbEQ
-Added on 14 Dec 2021
-Last used within the last week — Read/write
+<img src="image/image01.jpeg">
 
-voltando para o terminal bash, rodar o seguinte comando:
+voltando para o terminal bash, rodar o seguinte comando (no diretorio /.ssh):
 
-ahkranz@krz:~/.ssh$ eval $(ssh-agent -s)
-Agent pid 21531
-ahkranz@krz:~/.ssh$ ssh-add id_ed25519
-Enter passphrase for id_ed25519: 
-Identity added: id_ed25519 (email@dominio.com)
+`eval $(ssh-agent -s)`
+
+`ssh-add id_ed25519`
 
 
