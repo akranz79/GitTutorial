@@ -1,4 +1,6 @@
 # Como usar o Git e Github na prática
+
+* Nota de atualização do documento (ssh e token)
  
 ## Início do vídeo
 
@@ -190,7 +192,7 @@ Existem diversas outras funcionalidades do Git e do Github, porém tenho certeza
 
 Recomendo sempre vocês darem uma olhada na [documentação do Git](https://git-scm.com/doc), pois qualquer dúvida que apareça pode ser respondida por lá na explicação
 
-## Chaves SSH e Tokens
+## Chave SSH e Token
 
 Devido a alterações de segurança do GitHub, em 12/08/2021 o github anunciou que a autenticação via usuário/senha seria desligado, ou seja, quando for 'empurrar' seu codigo para o github, você não vai mais conseguir fazer usando somente a autenticação com seu usuário e senha. Será necessário executar alguns procedimentos de autenticação, que veremos aqui.
 
@@ -213,5 +215,7 @@ voltando para o terminal bash, rodar o seguinte comando (no diretorio /.ssh):
 `eval $(ssh-agent -s)`
 
 `ssh-add id_ed25519`
+
+O conteúdo deste tópico pode ser verificado neste [video](https://www.youtube.com/watch?v=9zTGIJi0JZ0) para uma melhor compreensão.
 
 
